@@ -1,8 +1,9 @@
 export interface User {
   /**
    * @isLong ErrorMessage
+   * @minimum 1
    */
-  id: number;
+  userId: number;
   email: string;
   name: string;
   status?: 'Happy' | 'Sad';
