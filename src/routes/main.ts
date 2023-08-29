@@ -2,7 +2,7 @@ import Router from '@koa/router';
 import { RegisterRoutes } from '../../tsoa/routes/routes';
 
 const router: Router = new Router({
-  prefix: '/api/v1',
+  prefix: process.env.ROUTE_PREFIX || '',
 });
 
 RegisterRoutes(router);
