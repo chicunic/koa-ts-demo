@@ -13,7 +13,7 @@ import { sessionConfig } from './session/config';
 const app: Koa = new Koa();
 app.keys = ['some secret hurr'];
 const port: number = Number(process.env.PORT) || 8080;
-const routePrefix: string = process.env.ROUTE_PREFIX || '/';
+const routePrefix: string = process.env.ROUTE_PREFIX || '/api/v1';
 
 app
   .use(bodyParser())

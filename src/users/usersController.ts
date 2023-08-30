@@ -1,11 +1,14 @@
-import { Body, Controller, Get, Path, Post, Query, Route, SuccessResponse } from 'tsoa';
+import { Body, Controller, Get, Path, Post, Query, Route, SuccessResponse, Tags } from 'tsoa';
 import { User } from './user';
 import { UsersService, UserCreationParams } from './usersService';
 
 @Route('users')
+@Tags('Users')
 export class UsersController extends Controller {
   /**
    * @isLong userId
+   * @example userId 123456
+   * @example name "Jane Doe"
    */
 
   // GET /users/{userId}
@@ -18,7 +21,6 @@ export class UsersController extends Controller {
   @SuccessResponse('201', 'Created')
   @Post()
   public async createUser(@Body() requestBody: UserCreationParams): Promise<void> {
-    this.setStatus(201);
     new UsersService().create(requestBody);
     return;
   }

@@ -5,10 +5,18 @@
   "spec": {
     "outputDirectory": "tsoa/swagger",
     "specVersion": 3,
-    "basePath": "/api/v1"
+    "basePath": "/api/v1",
+    "securityDefinitions": {
+      "jwt": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
   },
   "routes": {
     "routesDir": "tsoa/routes",
-    "middleware": "koa"
+    "middleware": "koa",
+    "authenticationModule": "src/auth/authentication.ts"
   }
 }
