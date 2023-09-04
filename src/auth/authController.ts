@@ -6,6 +6,7 @@ import { AuthService, LoginParams, JwtLoginResponse } from './authService';
 @Tags('Auth')
 export class AuthController extends Controller {
   // POST /auth/login
+  @Response('401', 'Unauthorized')
   @Post('login')
   public async login(@Body() requestBody: LoginParams, @Request() request: koa.Request): Promise<void> {
     new AuthService().login(requestBody, request.ctx);

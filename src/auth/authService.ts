@@ -6,13 +6,13 @@ export type LoginParams = Pick<User, 'userId' | 'email'>;
 export type JwtLoginResponse = Pick<User, 'userId' | 'email'> & { jwtToken: string };
 
 export class AuthService {
-  public login(LoginParams: LoginParams, ctx: koa.Context) {
+  public login(LoginParams: LoginParams, ctx: koa.Context): void {
     ctx.session!.userId = LoginParams.userId;
     ctx.session!.email = LoginParams.email;
     return;
   }
 
-  public logout(ctx: koa.Context) {
+  public logout(ctx: koa.Context): void {
     ctx.session = null;
     return;
   }
@@ -37,7 +37,7 @@ export class AuthService {
       },
     );
     return {
-      userId: LoginParams.userId,
+      userId: LoginParams.userId as number,
       email: LoginParams.email,
       jwtToken,
     };
