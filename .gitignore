@@ -1,6 +1,5 @@
 .DS_Store
-tsoa/routes/*.ts
-tsoa/swagger/*.json
+src/routes/_routes_tsoa.ts
 
 # Logs
 logs

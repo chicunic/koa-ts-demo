@@ -53,7 +53,7 @@ How to generate swagger.json:
 pnpm run build:swagger
 ```
 
-This command will generate `swagger.json` file in `tsoa/swagger` folder and `routes.ts` file in `tsoa/routes` folder. Please and these two files to `.gitignore` file and **DO NOT** commit them to git.
+This command will generate `swagger.json` file in `dist/static` folder and `routes.ts` file in `src/routes` folder. Please and these two files to `.gitignore` file and **DO NOT** commit them to git.
 
 The development mode will generate `swagger.json` and `routes.ts` automatically so you don't need to run this command.
 

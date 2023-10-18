@@ -3,7 +3,7 @@
   "noImplicitAdditionalProperties": "throw-on-extras",
   "controllerPathGlobs": ["src/**/*Controller.ts"],
   "spec": {
-    "outputDirectory": "tsoa/swagger",
+    "outputDirectory": "dist/static",
     "specVersion": 3,
     "basePath": "/api/v1",
     "securityDefinitions": {
@@ -15,7 +15,8 @@
     }
   },
   "routes": {
-    "routesDir": "tsoa/routes",
+    "routesDir": "src/routes",
+    "routesFileName": "_routes_tsoa.ts",
     "middleware": "koa",
     "authenticationModule": "src/auth/authentication.ts"
   }

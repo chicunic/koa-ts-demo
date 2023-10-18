@@ -1,6 +1,6 @@
 import koa from 'koa';
 import Router from '@koa/router';
-import { RegisterRoutes } from '../../tsoa/routes/routes';
+import { RegisterRoutes } from './_routes_tsoa';
 
 const router: Router = new Router({
   prefix: process.env.ROUTE_PREFIX || '/api/v1',

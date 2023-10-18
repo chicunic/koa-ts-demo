@@ -18,7 +18,7 @@ const routePrefix: string = process.env.ROUTE_PREFIX || '/api/v1';
 app
   .use(bodyParser())
   .use(cors())
-  .use(mount(routePrefix, serve('tsoa/swagger')))
+  .use(mount(routePrefix, serve('dist/static')))
   .use(
     koaSwagger({
       routePrefix: routePrefix,
