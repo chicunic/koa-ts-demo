@@ -3,7 +3,7 @@ import Router from '@koa/router';
 import { RegisterRoutes } from './_routes_tsoa';
 
 const router: Router = new Router({
-  prefix: process.env.ROUTE_PREFIX || '/api/v1',
+  prefix: process.env.ROUTE_PREFIX ?? '/api/v1',
 });
 
 router.use(async (ctx: koa.Context, next: koa.Next) => {
@@ -11,7 +11,7 @@ router.use(async (ctx: koa.Context, next: koa.Next) => {
     await next();
   } catch (err) {
     console.log('err:', err);
-    ctx.response.status = err.status || 500;
+    ctx.response.status = err.status ?? 500;
     ctx.body = err.message;
   }
 });

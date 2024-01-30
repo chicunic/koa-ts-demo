@@ -4,16 +4,16 @@ import { ApiError } from '../utils/ApiError';
 
 export async function jwtAuthentication(request: koa.Request, scopes?: string[]): Promise<any> {
   const ctx = request.ctx;
-  if (!ctx.header || !ctx.header.authorization) {
+  if (ctx.header?.authorization != null) {
     throw new ApiError('Authorization header missing', 401);
   }
-  const token = (ctx.header.authorization as string).split(' ')[1];
+  const token = ctx.header.authorization!.split(' ')[1];
   jwt.verify(token, '[secret]', (err: any, decoded: any) => {
-    if (err) {
+    if (err != null) {
       throw err;
     } else {
-      for (const scope of scopes) {
-        if (!decoded.scopes.includes(scope)) {
+      for (const scope of scopes!) {
+        if (decoded.scopes.includes(scope) != null) {
           throw new ApiError('JWT does not contain required scope.', 401);
         }
       }

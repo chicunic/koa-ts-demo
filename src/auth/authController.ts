@@ -10,7 +10,6 @@ export class AuthController extends Controller {
   @Post('login')
   public async login(@Body() requestBody: LoginParams, @Request() request: koa.Request): Promise<void> {
     new AuthService().login(requestBody, request.ctx);
-    return;
   }
 
   // POST /auth/logout
@@ -19,7 +18,6 @@ export class AuthController extends Controller {
   @Post('logout')
   public async logout(@Request() request: koa.Request): Promise<void> {
     new AuthService().logout(request.ctx);
-    return;
   }
 
   // GET /auth/view

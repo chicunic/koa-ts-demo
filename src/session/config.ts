@@ -1,4 +1,7 @@
-export const sessionConfig = {
+import { DefaultState, DefaultContext } from 'koa';
+import { opts } from 'koa-session';
+
+export const sessionConfig: Partial<opts<DefaultState, DefaultContext, any>> = {
   key: 'koa.sess' /** (string) cookie key (default is koa.sess) */,
   /** (number || 'session') maxAge in ms (default is 1 days) */
   /** 'session' will result in a cookie that expires when session/browser is closed */
@@ -11,7 +14,7 @@ export const sessionConfig = {
   rolling:
     false /** (boolean) Force a session identifier cookie to be set on every response. The expiration is reset to the original maxAge, resetting the expiration countdown. (default is false) */,
   renew:
-    false /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false)*/,
-  secure: false /** (boolean) secure cookie*/,
-  sameSite: null /** (string) session cookie sameSite options (default null, don't set it) */,
+    false /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false) */,
+  secure: false /** (boolean) secure cookie */,
+  // sameSite: null /** (string) session cookie sameSite options (default null, don't set it) */,
 };

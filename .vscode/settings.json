@@ -1,8 +1,26 @@
 {
-  "[typescript]": {
+  "[javascript]": {
+    "editor.formatOnSave": false,
     "editor.tabSize": 2
   },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.tabSize": 2
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "eslint.enable": true,
+  "prettier.configPath": ".prettierrc",
   "prettier.printWidth": 120,
+  "prettier.requireConfig": true,
   "prettier.trailingComma": "all",
-  "typescript.preferences.quoteStyle": "single"
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

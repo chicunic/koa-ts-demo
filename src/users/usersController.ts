@@ -22,6 +22,5 @@ export class UsersController extends Controller {
   @Post()
   public async createUser(@Body() requestBody: UserCreationParams): Promise<void> {
     new UsersService().create(requestBody);
-    return;
   }
 }
